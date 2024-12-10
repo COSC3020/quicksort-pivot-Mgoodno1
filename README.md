@@ -19,3 +19,13 @@ quantitatively reason with them.
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+Answer:
+The Median-of-three method for selecting a pivot in Quicksort is more effective than simply choosing the leftmost element. This is because it increases the probability of selecting a good pivot. When using the leftmost element as the pivot, the probability of picking a "good" pivot, one that results in balanced partitions, is roughly 1/2, since it’s equally likely to be anywhere in the array. In contrast, the Median-of-three method considers the first, middle, and last elements of the array. This method is more likely to select a pivot near the true median which improves the partition balance. The probability of picking a good pivot with the Median-of-three method is around 2/3, this is because of the possible ordering of the first, middle, and last elements. There are six possible orderings that can be concluded from first (F), middle(M), and last(L) elements: F < M < L, F < L < M, M < F < L, M < L < F, L < F < M, L < M < F. Which out of these 6 we have 4 "good" pivots because of it being closer to a true median, giving us 4/6 which reduces to 2/3, which occur in: F < M < L (pivot is M), F < L < M (pivot is L), M < F < L (pivot is F), M < L < F (pivot is M). Which is significantly higher than the 1/2 probability of the leftmost element. Thus the Median-of-three method reduces the likelihood of worst-case performance in Quicksort. While also leading to more balanced partitions and improved overall efficiency.
+
+Sources:
+Some lecture notes
+ChatGPT to understand the probability when was incorrect
+
+# Plagarism Statement
+All exercises must contain the following statement: “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.”
